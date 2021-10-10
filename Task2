@@ -1,0 +1,18 @@
+import re
+
+s = input()
+
+if(s.count('/') != 2):
+    print("Не хайку. Должно быть 3 строки.")
+else:
+    ind1 = s.find('/')
+    ind2 = s.find('/', ind1 + 1)
+    vow1 = len(re.findall("[аоэеиыуёюяАОЭЕУИЫУЁЮЯ]", s[0:ind1]))
+    vow2 = len(re.findall("[аоэеиыуёюяАОЭЕУИЫУЁЮЯ]", s[ind1:ind2]))
+    vow3 = len(re.findall("[аоэеиыуёюяАОЭЕУИЫУЁЮЯ]", s[ind2:len(s)]))
+    if(vow1 == 5 and vow2 == 7 and vow3 == 5):
+        print("Хайку!")
+    else:
+        print("Не хайку.")
+
+
