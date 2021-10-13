@@ -1,0 +1,12 @@
+import re
+
+s = input()
+
+fullm = re.fullmatch("(\w|\.)+@(\d|[a-z]|[A-Z]|\.)+\.([a-z]|[A-Z])+", s)
+
+if(fullm == None):
+    print("Fail!")
+else:
+    print(re.search("@(\d|[a-z]|[A-Z]|\.)+\.([a-z]|[A-Z])+", s).group())
+    
+
