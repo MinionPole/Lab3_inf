@@ -1,12 +1,12 @@
 import re
 
-s = input()
+def solve(s):
+    fullm = re.search("(\w|\.)*(@(\d|[a-z]|[A-Z]|\.)+\.([a-z]|[A-Z])+)", s)
 
-fullm = re.fullmatch("(\w|\.)+@(\d|[a-z]|[A-Z]|\.)+\.([a-z]|[A-Z])+", s)
+    if(fullm == None):
+        return "Fail!"
+    else:
+        return fullm.group(2)
 
-if(fullm == None):
-    print("Fail!")
-else:
-    print(re.search("@(\d|[a-z]|[A-Z]|\.)+\.([a-z]|[A-Z])+", s).group())
-    
-
+s = input()    
+print(solve(s))
