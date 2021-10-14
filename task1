@@ -1,7 +1,7 @@
-s = ""
-start = 0
-ans = 0
-while(s.find("=-P", start) != -1):
-    ans = ans + 1
-    start = s.find("=-P", start) + 1
-print(ans)
+import re
+
+def solve(s):
+    return (len(re.findall("=-P", s)))
+
+s = input()
+print(solve(s))
